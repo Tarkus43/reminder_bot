@@ -1,5 +1,5 @@
 import { Telegraf } from "telegraf";
-import { config } from "./config.js";
+import { config } from "../config.js";
 import { mainMenuMarkup } from "./markups/mainMenuMarkup.js";
 import { listen } from "./listeners/listen.js";
 

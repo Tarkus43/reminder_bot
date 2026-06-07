@@ -1,4 +1,4 @@
-import { mainMenuMarkup } from "../markups/mainMenuMarkup.js";  
+import { mainMenuMarkup } from "../markups/mainMenuMarkup.js";
 
 export const backToMainMenuListener = (bot) => {
   bot.hears('↩ back to main menu', (ctx) => {
