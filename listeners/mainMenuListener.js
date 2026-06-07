@@ -1,3 +1,4 @@
+import { backToMainMenuMarkup } from "../markups/backToMainMenuMarkup.js";
 export const mainMenuListener = (bot) => {
   bot.hears('⏰ My timers', (ctx) => {
     ctx.reply('Here are your timers:');
@@ -8,6 +9,6 @@ export const mainMenuListener = (bot) => {
   });
   
   bot.hears('❓ Help', (ctx) => {
-    ctx.reply('Help:');
+    ctx.reply('Help:', backToMainMenuMarkup);
   });
 }
