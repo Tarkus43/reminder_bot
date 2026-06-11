@@ -4,11 +4,12 @@
   },
   "dependencies": {
     "axios": "^1.17.0",
+    "chalk": "^4.1.2",
     "sqlite3": "^6.0.1",
     "telegraf": "^4.16.3"
   },
   "scripts": {
-    "bot":"nodemon src/index.js"
+    "bot": "nodemon src/index.js"
   },
   "type": "module"
 }
