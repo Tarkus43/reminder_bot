@@ -16,7 +16,6 @@ try {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
         message TEXT NOT NULL,
-        description TEXT,
         remind_at INTEGER NOT NULL,
         is_fired INTEGER DEFAULT 0
         )
