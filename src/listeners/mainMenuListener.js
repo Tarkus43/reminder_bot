@@ -1,5 +1,6 @@
 import { backToMainMenuMarkup } from "../markups/backToMainMenuMarkup.js";
 import * as chrono from "chrono-node";
+import {userStates} from "../userStates.js"
 
 
 export const mainMenuListener = (bot) => {
@@ -12,17 +13,25 @@ export const mainMenuListener = (bot) => {
     });
 
   bot.hears('➕ New timer', (ctx) => {
+    const reminder = {
+      user_id: ctx.from.id,
+    }
+
     ctx.reply('enter in EN any time you want', backToMainMenuMarkup)
+
     bot.on('text', (ctx) => {
       const result = ctx.message.text 
       const time = chrono.parse(result, new Date(), {forwardDate: true,})
-      const msTime = time[0].date().getTime()
-      if (!msTime) {
+      let msTime
+
+      try {
+        msTime = time[0].date().getTime()
+      } catch (error) {
         ctx.reply('please, try again, I didnt understand', backToMainMenuMarkup)
-      } else {
-        ctx.reply('your time is: ' + msTime, backToMainMenuMarkup)
       }
-      // usersStates.delete(ctx.from.id)
+      
+      ctx.reply('your time is: ' + msTime)
+      ctx.reply('enter description or leave it blank')
     })
   })
 }

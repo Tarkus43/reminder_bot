@@ -1,1 +1,1 @@
-export const userContext = new Map()
+export const userStates = new Map()
