@@ -23,14 +23,10 @@ export const mainMenuListener = (bot) => {
       const result = ctx.message.text 
       const time = chrono.parse(result, new Date(), {forwardDate: true,})
       let msTime
-
-      try {
-        msTime = time[0].date().getTime()
-      } catch (error) {
-        ctx.reply('please, try again, I didnt understand', backToMainMenuMarkup)
-      }
+      msTime = time[0].date().getTime()
+      const diff = msTime - Date.now()
       
-      ctx.reply('your time is: ' + msTime)
+      ctx.reply(`через ${diff}мс (${Math.round(diff / 1000)} секунд)`)
       ctx.reply('enter description or leave it blank')
     })
   })
