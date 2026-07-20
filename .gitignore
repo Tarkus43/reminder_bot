@@ -2,3 +2,4 @@ node_modules
 example/
 config.js
 database.db
+connect.js
